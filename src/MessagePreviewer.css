@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  background-color: #020c1c;
+  color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+input[type="file"] {
+  display: block;
+  margin-top: 5px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #252525;
+  color: #f0f0f0;
+  resize: vertical;
+  font-size: 14px;
+}
+
+textarea::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.copy-btn {
+  background-color: #3aa6fe;
+  color: #fff;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.download-btn {
+    background-color:#3aa6fe;
+    color:#fff;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 3px;
+    font-size: 10px;
+    margin-bottom: 6px;
+    font-weight: 1000;
+}
+
+.nav-btn {
+  background-color: #555;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.preview-box {
+  border: 3px solid;
+  border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;  padding: 12px;
+  border-radius: 8px;
+  min-height: 80px;
+  background-color: #252525;
+  margin-top: 10px;
+  color: #f0f0f0;
+}
+.editable-area {
+  min-height: 100px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.editable-area:empty:before {
+  content: attr(placeholder);
+  color: #aaa;
+}
