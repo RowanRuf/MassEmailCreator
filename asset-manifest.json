@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/MassEmailCreator/static/css/main.ea37bfe4.css",
-    "main.js": "/MassEmailCreator/static/js/main.cb4b8c26.js",
+    "main.js": "/MassEmailCreator/static/js/main.9511feeb.js",
     "index.html": "/MassEmailCreator/index.html",
     "main.ea37bfe4.css.map": "/MassEmailCreator/static/css/main.ea37bfe4.css.map",
-    "main.cb4b8c26.js.map": "/MassEmailCreator/static/js/main.cb4b8c26.js.map"
+    "main.9511feeb.js.map": "/MassEmailCreator/static/js/main.9511feeb.js.map"
   },
   "entrypoints": [
     "static/css/main.ea37bfe4.css",
-    "static/js/main.cb4b8c26.js"
+    "static/js/main.9511feeb.js"
   ]
 }
