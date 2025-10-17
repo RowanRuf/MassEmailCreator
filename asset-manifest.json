@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MassEmailCreator/static/css/main.ea37bfe4.css",
+    "main.js": "/MassEmailCreator/static/js/main.29a38a31.js",
+    "index.html": "/MassEmailCreator/index.html",
+    "main.ea37bfe4.css.map": "/MassEmailCreator/static/css/main.ea37bfe4.css.map",
+    "main.29a38a31.js.map": "/MassEmailCreator/static/js/main.29a38a31.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea37bfe4.css",
+    "static/js/main.29a38a31.js"
+  ]
+}
