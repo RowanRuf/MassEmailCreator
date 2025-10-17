@@ -90,7 +90,7 @@ export default function MessagePreviewer() {
       const commands = { b: "bold", i: "italic", u: "underline" };
       const cmd = commands[key];
       if (cmd) {
-        e.preventDefault(); // stop browser’s default Ctrl+B, Ctrl+I, etc.
+        e.preventDefault();
         document.execCommand(cmd, false, null);
       }
     }
@@ -99,17 +99,14 @@ export default function MessagePreviewer() {
   const handlePaste = (e) => {
     e.preventDefault();
 
-    // Try to get HTML first, fallback to plain text
     const html = e.clipboardData.getData("text/html");
     const text = e.clipboardData.getData("text/plain");
 
     let content = html || text.replace(/\n/g, "<br>");
 
-    // Create a temp container to modify the pasted content
     const temp = document.createElement("div");
     temp.innerHTML = content;
 
-    // Force all text to white (keeps images + formatting)
     temp.querySelectorAll("*").forEach((el) => {
       if (el.tagName !== "IMG") {
         el.style.color = "white";
@@ -126,7 +123,7 @@ export default function MessagePreviewer() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <label>Upload Google Sheet/Excel File: </label>
-            <a className="download-btn" href="/email_template.xlsx" download> Download Template </a>
+            <a className="download-btn" href="%PUBLIC_URL%/email_template.xlsx" download> Download Template </a>
           </div>
           <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload} />
         </div>
@@ -146,7 +143,7 @@ export default function MessagePreviewer() {
           <div
             contentEditable
             className="editable-area"
-            ref={editableRef}           // optional if you want to access the element
+            ref={editableRef}
             onInput={() => setMessageTemplate(editableRef.current.innerHTML)}
             onKeyDown={handleFormattingShortcuts}
             onPaste={handlePaste}
@@ -189,7 +186,7 @@ export default function MessagePreviewer() {
       <div>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <label>Upload Google Sheet/Excel File: </label>
-          <a className="download-btn" href="/email_template.xlsx" download> Download Template </a>
+          <a className="download-btn" href="%PUBLIC_URL%/email_template.xlsx" download> Download Template </a>
         </div>
         <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload} />
       </div>
@@ -219,7 +216,7 @@ export default function MessagePreviewer() {
         <div
           contentEditable
           className="editable-area"
-          ref={editableRef}           // now this works
+          ref={editableRef}
           onInput={() => setMessageTemplate(editableRef.current.innerHTML)}
           onKeyDown={handleFormattingShortcuts}
           onPaste={handlePaste}
