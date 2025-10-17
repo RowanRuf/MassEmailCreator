@@ -123,7 +123,7 @@ export default function MessagePreviewer() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <label>Upload Google Sheet/Excel File: </label>
-            <a className="download-btn" href="${process.env.PUBLIC_URL}/email_template.xlsx" download> Download Template </a>
+            <a className="download-btn"   href={`${process.env.PUBLIC_URL}/email_template.xlsx`} download> Download Template </a>
           </div>
           <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload} />
         </div>
@@ -186,7 +186,7 @@ export default function MessagePreviewer() {
       <div>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <label>Upload Google Sheet/Excel File: </label>
-          <a className="download-btn" href="${process.env.PUBLIC_URL}/email_template.xlsx" download> Download Template </a>
+          <a className="download-btn"   href={`${process.env.PUBLIC_URL}/email_template.xlsx`} download> Download Template </a>
         </div>
         <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload} />
       </div>
