@@ -108,6 +108,13 @@ button:hover {
   border-radius: 6px;
   outline: none;
 }
+.subject-area {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
 
 .editable-area:empty:before {
   content: attr(placeholder);

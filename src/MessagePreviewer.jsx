@@ -5,6 +5,7 @@ import "./MessagePreviewer.css";
 export default function MessagePreviewer() {
   const [people, setPeople] = useState([]);
   const [messageTemplate, setMessageTemplate] = useState("");
+  const [subjectLine, setSubjectLine] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState([]);
 
@@ -58,6 +59,7 @@ export default function MessagePreviewer() {
   };
 
   const editableRef = useRef(null);
+  const editableSubRef = useRef(null);
 
   const replacePlaceholders = (template, person) => {
     let result = template;
@@ -137,6 +139,18 @@ export default function MessagePreviewer() {
             onChange={handleImageUpload}
           />
         </div>
+        <div>
+          <label>Subject Line</label>
+          <div
+            contentEditable
+            className="subject-area"
+            ref={editableSubRef}
+            onInput={() => setSubjectLine(editableSubRef.current.innerHTML)}
+            onKeyDown={handleFormattingShortcuts}
+            onPaste={handlePaste}
+            placeholder="Enter Subject Line"
+          />
+        </div>
 
         <div style={{ marginTop: 20 }}>
           <label>Message Template:</label>
@@ -210,7 +224,18 @@ export default function MessagePreviewer() {
           ))}
         </div>
       </div>
-
+      <div>
+        <label>Subject Line</label>
+        <div
+          contentEditable
+          className="subject-area"
+          ref={editableSubRef}
+          onInput={() => setSubjectLine(editableSubRef.current.innerHTML)}
+          onKeyDown={handleFormattingShortcuts}
+          onPaste={handlePaste}
+          placeholder="Enter Subject Line"
+        />
+      </div>
       <div style={{ marginTop: 20 }}>
         <label>Message Template:</label>
         <div
@@ -252,6 +277,9 @@ export default function MessagePreviewer() {
           </button>
           <button className="copy-btn" onClick={() => copyToClipboard(email)}>
             Copy Email
+          </button>
+          <button className="copy-btn" onClick={() => copyToClipboard(subjectLine)}>
+            Copy Subject Line
           </button>
           <button className="copy-btn" onClick={() => copyToClipboard(modifiedMessage)}>
             Copy Message
