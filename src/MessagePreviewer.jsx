@@ -47,10 +47,20 @@ export default function MessagePreviewer() {
 
   const copyToClipboard = async (html) => {
     try {
+      const doc = new DOMParser().parseFromString(html, "text/html");
+
+      doc.querySelectorAll("*").forEach(el => {
+        el.style.removeProperty("color");
+        el.style.removeProperty("background-color");
+      });
+
+      const cleanHtml = doc.body.innerHTML;
+      const plainText = doc.body.innerText;
+
       await navigator.clipboard.write([
         new ClipboardItem({
-          "text/html": new Blob([html], { type: "text/html" }),
-          "text/plain": new Blob([html.replace(/<[^>]*>/g, "")], { type: "text/plain" }),
+          "text/html": new Blob([cleanHtml], { type: "text/html" }),
+          "text/plain": new Blob([plainText], { type: "text/plain" }),
         }),
       ]);
     } catch (err) {
